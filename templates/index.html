@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Energy Project Name Generator</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='oil_gas_renewables.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='oil_gas_renewables.png') }}" class="icon" />
+  <h3>Name your Energy Project</h3>
+  <div class="form-result-container">
+    <form action="/" method="post">
+      <input type="text" name="term" placeholder="Enter a location" required />
+      <input type="submit" value="Generate names" />
+    </form>
+    {% if result %}
+    <div class="result has-names">
+      <ul>
+        {% for name in result %}
+          <li>{{ name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
