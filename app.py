@@ -14,7 +14,7 @@ def index():
             model="text-davinci-003",
             prompt=generate_prompt(term),
             temperature=0.6,
-            max_tokens=50,
+            max_tokens=100,
             n=3,
             top_p=0.9,
             stop=["\n"],
